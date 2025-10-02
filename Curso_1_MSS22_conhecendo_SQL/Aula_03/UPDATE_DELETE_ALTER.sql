@@ -1,29 +1,25 @@
-UPDATE
-    [TABELA_PRODUTOS]
-SET
-    [PRECO_LISTA] = [PRECO_LISTA] * 0.90
-WHERE
-    [EMBALAGEM] = 'Lata'; 
+-- =========================================
+-- Aula 03 - Atualizando e removendo dados
+-- Objetivo geral: praticar UPDATE com condicoes, ajuste de multiplas colunas e DELETE seguro.
+-- Conceitos principais: SET, filtros em UPDATE/DELETE, conferencias com SELECT intermediario.
+-- =========================================
 
+-- Bloco 1 | Dar desconto de 10% em produtos que usam embalagem Lata.
+UPDATE TABELA_PRODUTOS
+SET PRECO_LISTA = PRECO_LISTA * 0.90
+WHERE EMBALAGEM = 'Lata';
 
--- COD-PROD: '1088126' 
-SELECT
-    *
-FROM
-    [TABELA_PRODUTOS]
-WHERE
-    [CODIGO_PRODUTO] = '1088126';
+-- Consulta rapida para conferir um produto especifico apos o desconto.
+SELECT *
+FROM TABELA_PRODUTOS
+WHERE CODIGO_PRODUTO = '1088126';
 
-UPDATE
-    [TABELA_PRODUTOS]  
-SET [EMBALAGEM] = 'Garrafa', 
-    [PRECO_LISTA] = 8.10
-WHERE
-    [CODIGO_PRODUTO] = '1088126';
+-- Bloco 2 | Ajustar embalagem e preco de um produto especifico.
+UPDATE TABELA_PRODUTOS
+SET EMBALAGEM = 'Garrafa',
+    PRECO_LISTA = 8.10
+WHERE CODIGO_PRODUTO = '1088126';
 
-
--- COD-PROD: '1004327'
-DELETE FROM 
-    [TABELA_PRODUTOS]
-WHERE 
-    [CODIGO_PRODUTO] = '1004327';
+-- Bloco 3 | Excluir um produto descontinuado.
+DELETE FROM TABELA_PRODUTOS
+WHERE CODIGO_PRODUTO = '1004327';

@@ -1,25 +1,31 @@
---Testando Restrição de Chave Primária.
--- O valor da chave primária não pode se repetir, ou seja, não pode haver dois registros com o mesmo valor na coluna que é chave primária.
+-- =========================================
+-- Aula 01 - Testando a restricao de chave primaria
+-- Objetivo geral: observar os erros quando tentamos violar unicidade e obrigatoriedade da chave.
+-- Conceitos principais: PRIMARY KEY, controle de duplicidade, valores NULL em colunas chave.
+-- =========================================
 
-INSERT INTO [TABELA_PRODUTOS] VALUES (
-'1040107',
-'Light 350 ml - Melancia',
-'Lata',
-'350 ml',
-'Melancia',
-4.56
+-- Bloco 1 | Tentativa de inserir um codigo de produto ja existente.
+-- Resultado esperado: erro de chave primaria informando que o valor duplicado nao pode ser inserido.
+INSERT INTO TABELA_PRODUTOS
+VALUES (
+    '1040107',           -- Codigo ja criado no arquivo INSERT_INTO.sql
+    'Light 350 ml - Melancia',
+    'Lata',
+    '350 ml',
+    'Melancia',
+    4.56
 );
 
---Teste de inserção com valor NULL na chave primária.
--- O valor da chave primária não pode ser NULL, ou seja, não pode haver registros sem valor na coluna que é chave primária.
-
-INSERT INTO [TABELA_PRODUTOS] VALUES (
-NULL,
-'Light 350 ml - Melancia',
-'Lata',
-'350 ml',
-'Melancia',
-4.56
+-- Bloco 2 | Tentativa de inserir um valor NULL na chave primaria.
+-- Resultado esperado: erro dizendo que a coluna nao permite valores nulos por ser chave primaria.
+INSERT INTO TABELA_PRODUTOS
+VALUES (
+    NULL,
+    'Light 350 ml - Melancia',
+    'Lata',
+    '350 ml',
+    'Melancia',
+    4.56
 );
 
-SELECT * FROM [TABELA_PRODUTOS];
+SELECT * FROM TABELA_PRODUTOS;     -- Utilize para confirmar que nenhum registro novo foi inserido

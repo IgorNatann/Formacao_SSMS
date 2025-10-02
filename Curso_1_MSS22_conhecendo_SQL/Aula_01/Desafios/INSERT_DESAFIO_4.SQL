@@ -1,36 +1,43 @@
-INSERT INTO [TABELA_CLIENTES]
+-- =========================================
+-- Desafio Aula 01 - Inserindo clientes de apoio (lote 2)
+-- Objetivo: ampliar a base de testes com CPFs formatados, enderecos variados e diferentes limites de credito.
+-- Conceitos principais: uso de valores NULL, numeros decimais, strings com caracteres especiais removidos para evitar erros de encoding.
+-- Orientacao: execute apos o lote 1 para preencher ainda mais a tabela de clientes.
+-- =========================================
+
+INSERT INTO TABELA_CLIENTES
     (CPF, NOME, RUA, COMPLEMENTO, BAIRRO, ESTADO, CEP, DATA_NASCIMENTO, IDADE, SEXO, LIMITE_CREDITO, VOLUME_MINIMO_COMPRA, PRIMEIRA_COMPRA)
 VALUES
-('111.111.111-11','João da Silva','Rua das Flores, 123','Apto 101','Centro','SP','01001-000','1985-03-15',38,'M',5000.00,200.00,1),
-('222.222.222-22','Maria Oliveira','Av. Paulista, 1000',NULL,'Bela Vista','SP','01310-100','1990-07-22',33,'F',7500.00,300.00,0),
-('333.333.333-33','Pedro Santos','Rua das Acácias, 45','Casa 2','Jardins','RJ','20031-050','1978-11-10',45,'M',3000.00,150.00,1),
-('444.444.444-44','Ana Costa','Rua das Palmeiras, 78',NULL,'Copacabana','RJ','22070-001','1995-06-05',28,'F',8200.00,400.00,0),
-('555.555.555-55','Carlos Pereira','Av. Atlântica, 500','Bloco A','Savassi','MG','30140-010','1982-01-19',41,'M',4200.00,250.00,1),
-('666.666.666-66','Fernanda Lima','Rua das Hortênsias, 234',NULL,'Savassi','MG','30130-120','1993-09-12',30,'F',6000.00,350.00,0),
-('777.777.777-77','Ricardo Almeida','Av. das Américas, 700','Sala 101','Barra','RJ','22775-003','1987-12-02',36,'M',9000.00,500.00,1),
-('888.888.888-88','Juliana Souza','Rua das Laranjeiras, 50',NULL,'Laranjeiras','RJ','22240-003','1998-04-25',25,'F',4800.00,220.00,0),
-('999.999.999-99','Marcos Rocha','Rua dos Pinheiros, 88','Fundos','Moema','SP','04510-001','1975-05-30',48,'M',10000.00,600.00,1),
-('000.000.000-00','Paula Fernandes','Av. Brasil, 1500',NULL,'Glória','RJ','20240-001','1989-02-14',34,'F',7000.00,280.00,0),
-('123.456.789-01','Thiago Martins','Rua Z, 99','Casa 3','Centro','BA','40020-001','1984-10-21',39,'M',3500.00,180.00,1),
-('123.456.789-02','Beatriz Gomes','Rua X, 12','Apto 22','Bela Vista','SP','01110-010','1992-08-09',31,'F',6200.00,310.00,0),
-('123.456.789-03','André Barbosa','Rua Y, 456','Bloco B','Centro','RJ','22030-050','1980-04-12',43,'M',4100.00,200.00,1),
-('123.456.789-04','Camila Duarte','Rua Verde, 87',NULL,'Boa Viagem','PE','51011-010','1996-09-17',27,'F',8300.00,350.00,0),
-('123.456.789-05','Gabriel Araujo','Av. Central, 901','Sala 5','Funcionários','MG','30120-100','1983-01-29',40,'M',5200.00,260.00,1),
-('123.456.789-06','Patrícia Mendes','Rua Azul, 76','Casa 1','Ipiranga','SP','04211-200','1991-03-22',32,'F',6400.00,270.00,0),
-('123.456.789-07','Felipe Cardoso','Av. Norte, 222','Galpão','Boa Vista','RR','69301-050','1979-07-08',44,'M',7100.00,400.00,1),
-('123.456.789-08','Larissa Nunes','Rua Amarela, 13',NULL,'Santa Efigênia','MG','30120-140','1997-05-18',26,'F',4600.00,210.00,0),
-('123.456.789-09','Eduardo Castro','Rua Roxa, 42','Apto 303','Leblon','RJ','22430-200','1988-06-30',35,'M',8800.00,420.00,1),
-('123.456.789-10','Renata Pires','Rua Branca, 5',NULL,'Centro','SP','01005-010','1994-11-11',29,'F',5900.00,240.00,0),
-('123.456.789-11','Roberto Carvalho','Rua Nova, 111','Casa 7','Centro','BA','40010-200','1981-09-19',42,'M',4700.00,190.00,1),
-('123.456.789-12','Vanessa Figueiredo','Rua Antiga, 21','Apto 201','Piedade','PE','51020-300','1993-02-05',30,'F',7500.00,320.00,0),
-('123.456.789-13','Lucas Moura','Av. Sul, 765',NULL,'Boa Vista','RR','69305-020','1982-10-25',41,'M',3600.00,150.00,1),
-('123.456.789-14','Aline Reis','Rua do Sol, 432','Apto 402','Santa Efigênia','MG','30140-200','1999-01-03',24,'F',5200.00,280.00,0),
-('123.456.789-15','Henrique Lopes','Av. Rio Branco, 89','Sala 301','Centro','RJ','20090-003','1986-07-14',37,'M',9400.00,500.00,1),
-('123.456.789-16','Natália Teixeira','Rua das Árvores, 12',NULL,'Centro','SP','01012-200','1995-12-23',28,'F',6000.00,260.00,0),
-('123.456.789-17','Marcelo Vieira','Rua da Paz, 200','Casa 9','Centro','BA','40015-050','1987-03-10',36,'M',4300.00,210.00,1),
-('123.456.789-18','Priscila Ramos','Av. Leste, 900','Apto 303','Boa Viagem','PE','51030-100','1992-09-07',31,'F',7800.00,330.00,0),
-('123.456.789-19','Rafael Moreira','Rua Oeste, 45',NULL,'Copacabana','RJ','22080-000','1984-04-16',39,'M',5100.00,200.00,1),
-('123.456.789-20','Cláudia Andrade','Rua Central, 78','Casa 11','Bela Vista','SP','01312-030','1996-06-25',27,'F',6700.00,290.00,0),
-('123.456.789-99','Mateus Xavier','Rua Final, 99','Apto 901','Centro','DF','70040-010','1983-02-12',40,'M',5600.00,210.00,1);
+    ('111.111.111-11','Joao da Silva','Rua das Flores, 123','Apto 101','Centro','SP','01001-000','1985-03-15',38,'M',5000.00,200.00,1),
+    ('222.222.222-22','Maria Oliveira','Av. Paulista, 1000',NULL,'Bela Vista','SP','01310-100','1990-07-22',33,'F',7500.00,300.00,0),
+    ('333.333.333-33','Pedro Santos','Rua das Acacias, 45','Casa 2','Jardins','RJ','20031-050','1978-11-10',45,'M',3000.00,150.00,1),
+    ('444.444.444-44','Ana Costa','Rua das Palmeiras, 78',NULL,'Copacabana','RJ','22070-001','1995-06-05',28,'F',8200.00,400.00,0),
+    ('555.555.555-55','Carlos Pereira','Av. Atlantica, 500','Bloco A','Savassi','MG','30140-010','1982-01-19',41,'M',4200.00,250.00,1),
+    ('666.666.666-66','Fernanda Lima','Rua das Hortensias, 234',NULL,'Savassi','MG','30130-120','1993-09-12',30,'F',6000.00,350.00,0),
+    ('777.777.777-77','Ricardo Almeida','Av. das Americas, 700','Sala 101','Barra','RJ','22775-003','1987-12-02',36,'M',9000.00,500.00,1),
+    ('888.888.888-88','Juliana Souza','Rua das Laranjeiras, 50',NULL,'Laranjeiras','RJ','22240-003','1998-04-25',25,'F',4800.00,220.00,0),
+    ('999.999.999-99','Marcos Rocha','Rua dos Pinheiros, 88','Fundos','Moema','SP','04510-001','1975-05-30',48,'M',10000.00,600.00,1),
+    ('000.000.000-00','Paula Fernandes','Av. Brasil, 1500',NULL,'Gloria','RJ','20240-001','1989-02-14',34,'F',7000.00,280.00,0),
+    ('123.456.789-01','Thiago Martins','Rua Z, 99','Casa 3','Centro','BA','40020-001','1984-10-21',39,'M',3500.00,180.00,1),
+    ('123.456.789-02','Beatriz Gomes','Rua X, 12','Apto 22','Bela Vista','SP','01110-010','1992-08-09',31,'F',6200.00,310.00,0),
+    ('123.456.789-03','Andre Barbosa','Rua Y, 456','Bloco B','Centro','RJ','22030-050','1980-04-12',43,'M',4100.00,200.00,1),
+    ('123.456.789-04','Camila Duarte','Rua Verde, 87',NULL,'Boa Viagem','PE','51011-010','1996-09-17',27,'F',8300.00,350.00,0),
+    ('123.456.789-05','Gabriel Araujo','Av. Central, 901','Sala 5','Funcionarios','MG','30120-100','1983-01-29',40,'M',5200.00,260.00,1),
+    ('123.456.789-06','Patricia Mendes','Rua Azul, 76','Casa 1','Ipiranga','SP','04211-200','1991-03-22',32,'F',6400.00,270.00,0),
+    ('123.456.789-07','Felipe Cardoso','Av. Norte, 222','Galpao','Boa Vista','RR','69301-050','1979-07-08',44,'M',7100.00,400.00,1),
+    ('123.456.789-08','Larissa Nunes','Rua Amarela, 13',NULL,'Santa Efigenia','MG','30120-140','1997-05-18',26,'F',4600.00,210.00,0),
+    ('123.456.789-09','Eduardo Castro','Rua Roxa, 42','Apto 303','Leblon','RJ','22430-200','1988-06-30',35,'M',8800.00,420.00,1),
+    ('123.456.789-10','Renata Pires','Rua Branca, 5',NULL,'Centro','SP','01005-010','1994-11-11',29,'F',5900.00,240.00,0),
+    ('123.456.789-11','Roberto Carvalho','Rua Nova, 111','Casa 7','Centro','BA','40010-200','1981-09-19',42,'M',4700.00,190.00,1),
+    ('123.456.789-12','Vanessa Figueiredo','Rua Antiga, 21','Apto 201','Piedade','PE','51020-300','1993-02-05',30,'F',7500.00,320.00,0),
+    ('123.456.789-13','Lucas Moura','Av. Sul, 765',NULL,'Boa Vista','RR','69305-020','1982-10-25',41,'M',3600.00,150.00,1),
+    ('123.456.789-14','Aline Reis','Rua do Sol, 432','Apto 402','Santa Efigenia','MG','30140-200','1999-01-03',24,'F',5200.00,280.00,0),
+    ('123.456.789-15','Henrique Lopes','Av. Rio Branco, 89','Sala 301','Centro','RJ','20090-003','1986-07-14',37,'M',9400.00,500.00,1),
+    ('123.456.789-16','Natalia Teixeira','Rua das Arvores, 12',NULL,'Centro','SP','01012-200','1995-12-23',28,'F',6000.00,260.00,0),
+    ('123.456.789-17','Marcelo Vieira','Rua da Paz, 200','Casa 9','Centro','BA','40015-050','1987-03-10',36,'M',4300.00,210.00,1),
+    ('123.456.789-18','Priscila Ramos','Av. Leste, 900','Apto 303','Boa Viagem','PE','51030-100','1992-09-07',31,'F',7800.00,330.00,0),
+    ('123.456.789-19','Rafael Moreira','Rua Oeste, 45',NULL,'Copacabana','RJ','22080-000','1984-04-16',39,'M',5100.00,200.00,1),
+    ('123.456.789-20','Claudia Andrade','Rua Central, 78','Casa 11','Bela Vista','SP','01312-030','1996-06-25',27,'F',6700.00,290.00,0),
+    ('123.456.789-99','Mateus Xavier','Rua Final, 99','Apto 901','Centro','DF','70040-010','1983-02-12',40,'M',5600.00,210.00,1);
 
-SELECT * FROM TABELA_CLIENTES;
+SELECT * FROM TABELA_CLIENTES;     -- Visualize o lote inteiro inserido

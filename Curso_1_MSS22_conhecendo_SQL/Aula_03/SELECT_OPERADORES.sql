@@ -1,22 +1,27 @@
--- Aplicando Filtro WHERE - 2.
-SELECT *
-FROM [TABELA_PRODUTOS]
-WHERE [PRECO_LISTA] = 7.00;
+-- =========================================
+-- Aula 03 - Comparando valores com operadores
+-- Objetivo geral: praticar operadores =, >, <= e comparar texto.
+-- Conceitos principais: WHERE com numericos, ordenacao por preco, comparacao alfabetica de strings.
+-- =========================================
 
--- Aplicando Filtro WHERE - 3.
+-- Bloco 1 | Produtos com preco exato.
 SELECT *
-FROM [TABELA_PRODUTOS]
-WHERE [PRECO_LISTA] > 7.00
-ORDER BY [PRECO_LISTA];
+FROM TABELA_PRODUTOS
+WHERE PRECO_LISTA = 7.00;
 
--- Aplicando Filtro WHERE - 4.
+-- Bloco 2 | Produtos com preco acima de 7 reais.
 SELECT *
-FROM [TABELA_PRODUTOS]
-WHERE [PRECO_LISTA] <= 7.00
-ORDER BY [PRECO_LISTA];
+FROM TABELA_PRODUTOS
+WHERE PRECO_LISTA > 7.00
+ORDER BY PRECO_LISTA;
 
--- Aplicando Filtro WHERE - 5.
+-- Bloco 3 | Produtos com preco ate 7 reais.
 SELECT *
-FROM [TABELA_PRODUTOS]
-WHERE [EMBALAGEM] > 'Lata';
+FROM TABELA_PRODUTOS
+WHERE PRECO_LISTA <= 7.00
+ORDER BY PRECO_LISTA;
 
+-- Bloco 4 | Comparando texto alfabeticamente.
+SELECT *
+FROM TABELA_PRODUTOS
+WHERE EMBALAGEM > 'Lata';

@@ -35,11 +35,11 @@ INSERT INTO TB_PRODUTOS (
 
 -- Exemplo de erro: tentativa de inserir o mesmo codigo (PK duplicada)
 -- Este comando dispara erro devido a restricao PRIMARY KEY sobre CODIGO.
-INSERT INTO TB_PRODUTOS (
-    CODIGO, DESCRITOR, SABOR, TAMANHO, EMBALAGEM, PRECO_LISTA
-) VALUES (
-    '1040109', 'Light - 350 ml - Acai', 'Acai', '350 ml', 'Lata', 5.60
-);
+-- INSERT INTO TB_PRODUTOS (
+--     CODIGO, DESCRITOR, SABOR, TAMANHO, EMBALAGEM, PRECO_LISTA
+-- ) VALUES (
+--     '1040109', 'Light - 350 ml - Acai', 'Acai', '350 ml', 'Lata', 5.60
+-- );
 
 -- Insercao 4: sabor Jaca com preco diferente
 INSERT INTO TB_PRODUTOS (
@@ -55,3 +55,6 @@ INSERT INTO TB_PRODUTOS (
 ) VALUES
     ('1040111', 'Light - 350 ml - Manga', 'Manga', '350 ml', 'Lata', 3.20),
     ('1040112', 'Light - 350 ml - Maca',  'Maca',  '350 ml', 'Lata', 4.20);
+
+
+SELECT * FROM TB_PRODUTOS;

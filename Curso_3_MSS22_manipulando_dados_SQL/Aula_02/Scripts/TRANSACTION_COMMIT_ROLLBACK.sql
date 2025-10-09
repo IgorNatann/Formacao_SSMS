@@ -1,35 +1,31 @@
--- TRANSACTION, COMMIT, ROLLBACK
--- TRANSACTION (BEGIN TRAN) inicia um bloco logico para executar comandos como uma unica unidade atomica.
--- Durante a transacao, o SQL Server registra cada passo no log, permitindo confirmar ou desfazer as mudancas.
--- COMMIT confirma a transacao, grava definitivamente os dados e libera os recursos bloqueados.
--- ROLLBACK desfaz todas as mudancas desde o BEGIN TRAN, retornando os dados ao estado anterior.
--- Finalizar sempre com COMMIT ou ROLLBACK evita que a sessao permaneca com locks abertos e garante consistencia.
--- Fluxo basico recomendado:
--- BEGIN TRAN;
---     -- suas instrucoes DML aqui (INSERT, UPDATE, DELETE)
---     -- validar regras de negocio e consistencia
--- IF @@ERROR = 0
---     COMMIT;
--- ELSE
---     ROLLBACK;
+-- ================================================================
+-- Curso 3 | Aula 04 | Atividade 12 | Demonstracao de transacoes (BEGIN TRAN, COMMIT, ROLLBACK)
+-- Objetivo: mostrar como agrupar alteracoes em blocos atomicos e confirmar ou
+-- desfazer mudancas em TB_VENDEDORES com seguranca.
+-- ================================================================
 
+-- Conceitos rapidos:
+-- BEGIN TRAN inicia a transacao; o SQL Server comeca a registrar o bloco.
+-- COMMIT grava as alteracoes e libera locks.
+-- ROLLBACK desfaz tudo desde o BEGIN TRAN, restaurando o estado inicial.
+-- Sempre finalize a transacao (COMMIT/ROLLBACK) para evitar sessao travada.
+
+-- Passo 1: visualizar o estado atual da tabela antes de qualquer transacao
 SELECT * FROM TB_VENDEDORES;
 
-BEGIN TRANSACTION
+-- Passo 2: exemplo com confirmacao (COMMIT)
+BEGIN TRANSACTION;
+    SELECT * FROM TB_VENDEDORES;            -- leitura dentro da transacao
+    UPDATE TB_VENDEDORES
+    SET COMISSAO = 0.11;                    -- altera todas as comissoes
+COMMIT;                                      -- confirma as mudancas
 
-SELECT * FROM TB_VENDEDORES;
+-- Passo 3: exemplo com desfazer (ROLLBACK)
+BEGIN TRANSACTION;
+    SELECT * FROM TB_VENDEDORES;            -- conferencia antes de alterar
+    UPDATE TB_VENDEDORES
+    SET COMISSAO = 0.10;                    -- mudanca temporaria
+ROLLBACK;                                    -- desfaz as alteracoes
 
-UPDATE TB_VENDEDORES SET COMISSAO = 0.11;
-
-COMMIT;
-
-
-BEGIN TRANSACTION
-
-SELECT * FROM TB_VENDEDORES;
-
-UPDATE TB_VENDEDORES SET COMISSAO = 0.10;
-
-ROLLBACK;
-
+-- Passo 4: checar o estado final (mantem valor do COMMIT, ignora o ROLLBACK)
 SELECT * FROM TB_VENDEDORES;

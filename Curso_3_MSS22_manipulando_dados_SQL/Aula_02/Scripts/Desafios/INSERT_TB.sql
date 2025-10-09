@@ -10,6 +10,10 @@
 -- Cliente 3: CPF 2600586709 | Cesar Teixeira | Bairro Tijuca | Cidade Rio de Janeiro | Primeira compra = 0
 -- Observacoes: utilize datas no formato ISO (YYYY-MM-DD) e mantenha limites/volumes como numeros.
 
+USE VENDAS_SUCOS;
+
+GO
+
 INSERT INTO TB_CLIENTES (
     CPF,
     NOME,

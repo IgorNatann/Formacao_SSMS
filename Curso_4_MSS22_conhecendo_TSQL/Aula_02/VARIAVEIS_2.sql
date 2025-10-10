@@ -1,0 +1,6 @@
+SET @MATRICULA = '00240';
+SET @NOME = 'Igor N.'
+SET @PERCENTUAL = 0.10
+SET @DATA = '1999-11-27'
+SET @FERIAS = 1
+SET @BAIRRO = 'Pq. Pinheiros'

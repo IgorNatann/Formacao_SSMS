@@ -1,5 +1,5 @@
 -- ================================================================
--- Curso 4 | Aula 01 | Variaveis em T-SQL
+-- Curso 4 | Aula 02 | Atividade 2 | Variaveis em T-SQL
 -- Objetivo: mostrar diferentes maneiras de declarar variaveis com tipos
 -- variados e organizacao das instrucoes em blocos.
 -- ================================================================

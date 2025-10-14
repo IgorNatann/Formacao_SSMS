@@ -1,13 +1,18 @@
--- No vídeo anterior, realizamos a atribuição de valores às variáveis através do comando SELECT, onde cada variável recebe o valor do seu respectivo campo na tabela.
+-- ================================================================
+-- Desafio | Curso 4 | Aula 03 | Atividade 04 | Atribuindo contagem a uma variavel com SELECT
+-- Objetivo: criar a variavel NUMNOTAS e armazenar o total de notas emitidas
+-- em 01/01/2017, exibindo o resultado ao final.
+-- ================================================================
 
--- A seguir, podemos conferir o comando realizado para atribuir esses valores:
-
--- SELECT @NOME = NOME, @DATA_NASCIMENTO = [DATA DE NASCIMENTO], @IDADE = IDADE FROM [TABELA DE CLIENTES] WHERE CPF = @CPF;
-
--- Levando em consideração o que fizemos até aqui, como podemos criar uma variável chamada NUMNOTAS e atribuir a ela o número de notas fiscais do dia 01/01/2017?
-
--- Para verificarmos o resultado, mostre na saída do script o valor da variável.
-
+-- Passo 1: declarar a variavel que recebera o total de notas (inteiro)
 DECLARE @NUMNOTAS INT;
-SET @NUMNOTAS = (SELECT COUNT(*) FROM [NOTAS FISCAIS] WHERE [DATA] = '2017-01-01');
+
+-- Passo 2: atribuir o valor usando SELECT (conta notas na data informada)
+SET @NUMNOTAS = (
+    SELECT COUNT(*)
+    FROM [NOTAS FISCAIS]
+    WHERE [DATA] = '2017-01-01'
+);
+
+-- Passo 3: exibir o valor para validar
 PRINT @NUMNOTAS;

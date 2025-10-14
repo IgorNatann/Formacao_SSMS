@@ -1,13 +1,17 @@
--- O T-SQL nos permite realizar a declaração de variáveis, o que foi possível colocar em prática através do desafio anterior.
--- Além disso, verificamos no vídeo anterior a possibilidade de atribuir valores às variáveis que criamos.
--- Pensando nisso, inicialize as variáveis do desafio anterior com os seguintes valores:
+-- ================================================================
+-- Desafio | Curso 4 | Aula 02 | Atividade 05 | Inicializando variaveis com valores
+-- Objetivo: reutilizar as variaveis do desafio anterior e ja atribuir os
+-- valores solicitados no momento da declaracao.
+-- ================================================================
 
--- Nome: Cliente - Tipo: Caracteres com 10 posições - Valor: João
--- Nome: Idade - Tipo: Inteiro - Valor: 10
--- Nome: DataNascimento - Tipo: Data - Valor: 10/01/2007
--- Nome: Custo - Tipo: Número com casas decimais - Valor: 10,23
+-- Passo 1: declarar a variavel de cliente com valor inicial
+DECLARE @CLIENTE VARCHAR(10) = 'Joao';
 
-DECLARE @CLIENTE VARCHAR(10) = N'João';
+-- Passo 2: declarar a variavel de idade com valor inicial
 DECLARE @IDADE INT = 10;
+
+-- Passo 3: declarar a variavel de data de nascimento
 DECLARE @DATANASCIMENTO DATE = '2007-01-10';
+
+-- Passo 4: declarar a variavel de custo com casas decimais
 DECLARE @CUSTO FLOAT = 10.23;

@@ -1,0 +1,7 @@
+*.mdf
+*.ndf
+*.ldf
+*.bak
+*.trn
+*.log
+.vscode/

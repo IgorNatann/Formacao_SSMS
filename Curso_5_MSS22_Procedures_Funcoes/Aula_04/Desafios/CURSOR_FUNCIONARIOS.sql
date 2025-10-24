@@ -5,7 +5,7 @@ DECLARE @NOME VARCHAR(200), @COMISSAO FLOAT;
 
 -- Secao 2 - Declaracao do cursor que seleciona nome e comissao dos vendedores.
 DECLARE CURSOR_LIST_FUNCIONARIOS CURSOR FOR
-    SELECT [NOME], [PERCENTUAL COMISSAO]
+    SELECT [NOME], [PERCENTUAL COMISSÃO]
     FROM [TABELA DE VENDEDORES];
 
 -- Secao 3 - Abertura do cursor para disponibilizar o conjunto de resultados.
